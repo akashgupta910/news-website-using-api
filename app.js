@@ -58,7 +58,6 @@ function Search() {
 }
 
 function updateCarousel(data) {
-    if (data['articles'].length > 0) {
         for (let index = 0; index < 3; index++) {
             let carouselElemParent = document.querySelector("#carous-el .carousel-inner");
             let elem = document.createElement('div');
@@ -88,10 +87,6 @@ function updateCarousel(data) {
 
             carouselElemParent.appendChild(elem);
         }
-    } else {
-        document.querySelector('.not-found').innerHTML = "Result Not Found!";
-        console.log('no')
-    }
 }
 
 function updateCard(data) {
