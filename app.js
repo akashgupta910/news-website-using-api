@@ -1,20 +1,12 @@
 (function AJAX() {
-    sessionStorage.setItem('category', "");
     let api_key = '89dc14a0f40f4974856a11e1b6fb2575';
     let country = 'in';
-    let category;
     let headline = 'top-headlines';
-
-    if (sessionStorage.getItem('category') == null)
-        category = "";
-    else 
-        category = sessionStorage.getItem('category');
-    
+   
     let api;
 
     if (sessionStorage.getItem('api') == null) {
-        document.querySelector(".head h1").innerHTML = sessionStorage.getItem('category');
-        api = `https://newsapi.org/v2/${headline}?country=${country}&category=${category}&apiKey=${api_key}`;
+        api = `https://newsapi.org/v2/${headline}?country=${country}&category=&apiKey=${api_key}`;
     } else {
         api = sessionStorage.getItem('api');
         document.querySelector(".head h1").innerHTML = sessionStorage.getItem('search_text');
@@ -39,18 +31,6 @@
     };
 
     xhr.send();
-}());
-
-(function Category() {
-    let links = document.getElementsByClassName("links");
-    for (let index = 0; index < links.length; index++) {
-        links[index].addEventListener('click', () => {
-            let cat = links[index].getAttribute('id');
-            sessionStorage.setItem('category', cat);
-            sessionStorage.removeItem('api');
-            location.reload();
-        });
-    }
 }());
 
 function Search() {
