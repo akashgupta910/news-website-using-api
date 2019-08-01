@@ -2,9 +2,14 @@
     sessionStorage.setItem('category', "");
     let api_key = '89dc14a0f40f4974856a11e1b6fb2575';
     let country = 'in';
-    let category = sessionStorage.getItem('category');
+    let category;
     let headline = 'top-headlines';
 
+    if (sessionStorage.getItem('category') == null)
+        category = "";
+    else 
+        category = sessionStorage.getItem('category');
+    
     let api;
 
     if (sessionStorage.getItem('api') == null) {
