@@ -1,5 +1,5 @@
 (function AJAX() {
-    let api_key = '89dc14a0f40f4974856a11e1b6fb2575';
+    let api_key = '34b5fb0b9f4a4c33b42f8ebc253b5b20';
     let country = 'in';
     let headline = 'top-headlines';
    
